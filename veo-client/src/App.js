@@ -1,7 +1,18 @@
-import "./App.css";
+import styled from "styled-components";
+import Node from "./components/Node";
 
-function App() {
-  return <div className="App"></div>;
-}
+const AppStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 32px;
+`;
+
+const App = () => {
+  return (
+    <AppStyled>
+      <Node name="Tabby McTabbison" title="CEO" />
+    </AppStyled>
+  );
+};
 
 export default App;
