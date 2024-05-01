@@ -5,13 +5,12 @@ const Wrapper = styled.div`
   border: ${(props) =>
     props.name ? "2px solid #28a8df" : "2px dotted #28a8df"};
   border-radius: 4px;
-  font-size: ${(props) => (props.name ? "16px" : "64px")};
+  font-size: 16px;
   min-width: 120px;
   max-width: 180px;
-  min-height: ${(props) => (props.name ? "auto" : "64px")};
-  text-align: center;
-  vertical-align: middle;
   color: #4f4f4f;
+  margin: 16px;
+  text-align: center;
 `;
 
 const Title = styled.div`
@@ -26,8 +25,18 @@ const Name = styled.div`
   padding: 8px;
 `;
 
+const StyledSpan = styled.span`
+  width: 120px;
+  font-size: 58px;
+`;
+
 const Node = ({ name, title }) => {
-  if (!name && !title) return <Wrapper>+</Wrapper>;
+  if (!name && !title)
+    return (
+      <Wrapper>
+        <StyledSpan>+</StyledSpan>
+      </Wrapper>
+    );
 
   return (
     <Wrapper name>
